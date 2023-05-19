@@ -35,7 +35,7 @@ class MembershipS1 extends Component{
                     </div>
                 </Col>
             </Row>
-                    <Link to="/register">Take Free Memebership</Link>
+                    <Link to="/login">Take Free Memebership</Link>
 
         </Container>
 

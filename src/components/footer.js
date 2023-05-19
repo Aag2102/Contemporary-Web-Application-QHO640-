@@ -11,7 +11,7 @@ class Footer extends Component{
                 <Container fluid className="d-flex text-dark align-items-center bg-dark text-white pt-3 opacity-9 border-top border-secondary">
                     <Row className="mx-0 w-100 small opacity-9">
                         <Col xs={12} md={6} lg={5} className="text-center text-md-start">
-                            <img src="img/navbar_logo.png" fluid alt="logo"/>
+                            <img src="/img/navbar_logo.png" fluid alt="logo"/>
                             <p className="initialism fw-normal">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                 sed do eiusmod tempor incididunt ut labore et dolore magna 

@@ -177,8 +177,10 @@ class TUserExt{
             $stmt->bindParam(":uid",$this->id);
             return $stmt->execute();
         }
-        else if(!$this->usernameExists($this->data['username'])
-        && !$this->emailExists($this->data['email'])){
+        else 
+        //     if(!$this->usernameExists($this->emailA)
+        // && !$this->emailExists($this->emailA))
+        {
             //create new
             // $sql = "insert into ".DB_PREFIX."users(username,password,email,privileges)";
             // $sql .= "values(:uname,:upass,:umail,:priv)";
@@ -192,13 +194,14 @@ class TUserExt{
 
             $sql = "insert into ";
             $sql .= DB_PREFIX;
-            $sql .= "users(username,password,email,privileges) ";
-            $sql .= "values(:na,:em,:pass,:pv)";
+            $sql .= "users(username,password,email) ";
+            $sql .= "values(:na,:pass,:em)";
             $stmt = $this->link->prepare($sql);
             $stmt->bindParam(":na",$name);
             $stmt->bindParam(":em",$emailA);
-            $stmt->bindParam(":msg",$password);
-            $stmt->bindParam(":pv",0);
+            $pass = sha1($password);
+            $stmt->bindParam(":pass",$pass);
+            // $stmt->bindParam(":pv",'0');
             return $stmt->execute();
         }
     }

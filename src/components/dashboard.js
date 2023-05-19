@@ -6,7 +6,15 @@ import Card from "../../node_modules/react-bootstrap/Card";
 import UserSideMenu from "./user-side-menu";
 import {APP_LINKS} from "../config";
 
+const imageStyles = {
+  maxHeight: '100px',
+  maxWidth: '100px',
+  minHeight: '100px',
+  minWidth: '100px',
+};
+
 class Dashboard extends Component{
+
 
     navigate(dataA){
         if(this.getCookie("tkid").length>0){
@@ -62,6 +70,7 @@ class Dashboard extends Component{
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
+
     render(){
         return(        
             <Container fluid className={"login-s1 bg-dark align-items-start p-0 py-5 d-flex minh-footer-adj "+this.props.classExt}>
@@ -69,7 +78,7 @@ class Dashboard extends Component{
                     <Col xs={12} md={3} className="mx-auto p-0 d-flex align-items-start p-3">
                         <UserSideMenu navigate={this.navigate.bind(this)} />
                     </Col>
-                    <Col xs={12} md={9} className="mx-auto p-0 d-flex align-items-start p-3">
+                    <Col xs={12} md={9} className="mx-auto p-0 d-flex align-items-start p-3 text-middle">
                   
                         <Card className="w-100 minh-50vh bg-dark border-secondary">
                             <Card.Body>
@@ -77,6 +86,10 @@ class Dashboard extends Component{
                                     Dashboard
                                 </p>
                             </Card.Body>
+                          
+                            <p className= "text-secondary text-center">
+                             <img src="/img/membership-card-2-svgrepo-com.svg" className="img-fluid" style={imageStyles} fluid alt="logo"/> <br />
+                              <strong>You are a Member</strong> </p>
                         </Card>
                     </Col>
                 </Row>

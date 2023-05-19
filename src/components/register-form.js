@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import {APP_LINKS} from "../config";
+import {Redirect} from "react-router-dom";
 import {Link} from "react-router-dom";
 import Button from "../../node_modules/react-bootstrap/Button";
 import Col from "../../node_modules/react-bootstrap/Col";
@@ -75,15 +76,24 @@ class RegisterForm extends Component{
         && this.state.userData.userPass===this.state.userData.userPassConfirm){  
             let formData = registerFormApi.getRegisterData(this.state.userData,cookieApi.getCookie("regcount"));
             registerFormApi.sendData(this.props.backNav,formData,cookieApi.getCookie,APP_LINKS.registeration);
-            this.clearForm();            
+            this.clearForm();   
+            this.redirectToLogin()         ;
         }
     }
 
+        redirectToLogin = () => {
+            this.setState({ redirectToLogin: true });
+          };
+
     clearForm(){
+        console.log("This uis here");
         this.setState({userData: registerFormApi.getClearData()});   
     }
 
     render(){
+        if (this.state.redirectToLogin) {
+      return <Redirect to="/login" />;
+    }
         return(        
             <Container fluid className={"contact-s2 align-items-center p-0 py-5 d-flex minh-100vh "+this.props.classExt}>
                 <Row className="mx-auto text-start w-100 pt-5">

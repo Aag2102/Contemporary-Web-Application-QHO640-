@@ -7,12 +7,14 @@ define("BASE_PATH","../php/");
 include_once(BASE_PATH."comm.php");
 include_once(BASE_PATH."t_dblink.php");
 include_once(BASE_PATH."t_message.php");
+include_once(BASE_PATH."t_user_ext.php");
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 $db = new TDBLink(HOST,DATABASE,USER,PASSWORD);
 $db->connect();
+
 
 if(isset($_REQUEST['regcount'])
 && htmlspecialchars($_REQUEST['regcount'])>=MSG_LIMIT){
@@ -24,7 +26,8 @@ else{
     && isset($_POST["userLogin"])
     && isset($_POST["emailAddr"])
     && isset($_POST["userPass"])){
-        $msg = new TUserExt($db->saveUser());
+        $msg = new TUserExt($db->getLink());
+
         if($msg->saveUser(
             htmlspecialchars($_POST["userLogin"]),
             htmlspecialchars($_POST["emailAddr"]),
