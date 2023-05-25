@@ -29,8 +29,8 @@ class Contact extends Component{
         }
         return(          
             <main className="minh-100vh contact-bg">  
-                <ContactData/>
                 {content}
+               <ContactData/>
             </main>
         );
     }

@@ -11,10 +11,11 @@ import Register from "./views/register";
 
 const appCfg = {
     routes:[
-        {navItem:true, exact:true, path:"/",name:"Home",view:<Home/>},
-        {navItem:true, exact:true, path:"/membership",name:"Membership",view:<Membership/>},
-        {navItem:true, exact:true, path:"/classes",name:"Classes",view:<Classes/>},
-        {navItem:true, exact:true, path:"/contact",name:"Contact",view:<Contact/>},
+        // {navItem:true, exact:true, path:"/",name:"Home",view:<Home/>},
+        {navItem:true, exact:true, path:"/",name:"Home",view:<Login backLink={{name:" Register now!",href:"/register"}}/>},        
+        {navItem:true, exact:true, path:"/about-us",name:"ABOUT US",view:<Membership/>},
+        {navItem:true, exact:true, path:"/services-and-cources",name:"SERVICES & COURSES",view:<Classes/>},
+        {navItem:true, exact:true, path:"/query",name:"QUERY & FEEDBACK",view:<Contact/>},
         {navItem:true, exact:true, path:"/login",name:<span className="fa fa-user-circle"></span>,view:<Login backLink={{name:" Register now!",href:"/register"}}/>},        
         {navItem:false, exact:true, path:"/comingsoon",name:"Comingsoon",view:<Comingsoon/>},
         {navItem:false, exact:true, path:"/register",name:"Register",view:<Register backLink={{name:" Login now!",href:"/login"}}/>},

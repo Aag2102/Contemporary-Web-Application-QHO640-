@@ -16,10 +16,14 @@ class LoginForm extends Component{
         this.state = {
             userData: {
                 name: "",
-                pass: ""
+                pass: "",
+                followUp: false
             }
         };
-    }
+    } handleCheckboxChange = (event) => {
+        this.setState({ followUp: event.target.checked });
+      }
+    
 
     componentDidMount(){
         if(cookieApi.getCookie("tkid").length>0){
@@ -60,7 +64,7 @@ class LoginForm extends Component{
 
     render(){
         return(        
-            <Container fluid className={"login-s1 align-items-center p-0 py-5 d-flex minh-100vh "+this.props.classExt}>
+            <Container fluid className={"login-s1  classes-s6 align-items-center p-0 py-5 d-flex minh-100vh background-item "+this.props.classExt}>
                 <Row className="mx-auto text-start w-100 pt-5">
                     <Col xs={11} md={5} lg={4} className="mx-auto p-0 d-flex align-items-center">
                         <Form className="text-start w-100 bg-dark opacity-9 border border-secondary p-4 rounded bg-light shadow text-secondary fw-bold"

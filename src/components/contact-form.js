@@ -17,6 +17,7 @@ class ContactForm extends Component {
                 emailAddress: "",
                 firstName: "",
                 lastName: "",
+                studyProgram: "",
                 messageText: "",
                 phoneNumber: ""
             }
@@ -33,6 +34,12 @@ class ContactForm extends Component {
         else if (ev.target.name === "lastName") {
             updateData = update(this.state.formData, {
                 lastName: { $set: ev.target.value }
+            });
+            this.setState({ formData: updateData });
+        }
+        else if (ev.target.name === "studyProgram") {
+            updateData = update(this.state.formData, {
+                studyProgram: { $set: ev.target.value }
             });
             this.setState({ formData: updateData });
         }
@@ -74,7 +81,7 @@ class ContactForm extends Component {
 
     render() {
         return (
-            <Container fluid className={"contact-s2 align-items-center px-0 py-5 border-top border-secondary d-flex minh-50vh " + this.props.classExt}>
+            <Container fluid className={"align-items-center px-0 py-5 border-top border-secondary d-flex minh-50vh " + this.props.classExt}>
                 <Row className="mx-auto text-center w-100">
                     <Col xs={11} md={6} className="mx-auto p-0 d-flex align-items-center">
                         <Form className="text-start w-100 border border-secondary p-4 rounded bg-dark opacity-9 shadow text-secondary fw-bold"
@@ -82,7 +89,7 @@ class ContactForm extends Component {
                             method="POST">
                             <div className="border-bottom border-secondary mb-4">
                                 <p className="font-weight-bold mb-1">
-                                    Contact online
+                                    Query Form
                                 </p>
                             </div>
                             <Form.Group controlId="formFirstName">
@@ -105,6 +112,17 @@ class ContactForm extends Component {
                                     name="lastName"
                                     onChange={this.updateFormData.bind(this)} 
                                     value={this.state.formData.lastName}
+                                    required/>
+                            </Form.Group>
+                            <Form.Group controlId="formLastName" className="mt-3">
+                                <Form.Label>Program of Study</Form.Label>
+                                <Form.Control type="text"
+                                    placeholder="Enter Program of Study"
+                                    className="rounded-pill bg-dark border-secondary text-white opacity-8"
+                                    maxLength="50"
+                                    name="studyProgram"
+                                    onChange={this.updateFormData.bind(this)} 
+                                    value={this.state.formData.studyProgram}
                                     required/>
                             </Form.Group>
                             <Form.Group controlId="formEmail" className="mt-3">

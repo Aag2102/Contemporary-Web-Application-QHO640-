@@ -1,38 +1,33 @@
 $prefix: "../../";
-$bg__classes-img: 
-    $prefix+"img/classes/classes-s1.jpg",
-    $prefix+"img/classes/classes-s2.jpg",
-    $prefix+"img/classes/classes-s3.jpg";
+$bg__classes-img: $prefix+"img/classes/classes-s1.jpg",
+$prefix+"img/classes/classes-s2.jpg",
+$prefix+"img/classes/classes-s3.jpg";
 $bg__comingsoon-img: $prefix+"img/coming.jpg";
-$bg__contact-img: 
-    $prefix+"img/contact/contact-s1.jpg",
-    $prefix+"img/contact/contact-s2.jpg";
+$bg__contact-img: $prefix+"img/contact/contact-s1.jpg",
+$prefix+"img/contact/contact-s2.jpg";
 $bg__error-img: $prefix+"img/error.jpg";
 $bg__index-img: $prefix+"img/index/index-s1.jpg";
 $bg__login-img: $prefix+"img/login/login-s1.jpg";
-$bg__membership-img: 
-    $prefix+"img/membership/membership-s1.jpg",
-    $prefix+"img/membership/membership-s2.jpg",
-    $prefix+"img/membership/membership-s3.jpg",
-    $prefix+"img/membership/membership-s4.jpg";
+$bg__membership-img: $prefix+"img/membership/membership-s1.jpg",
+$prefix+"img/membership/membership-s2.jpg",
+$prefix+"img/membership/membership-s3.jpg",
+$prefix+"img/membership/membership-s4.jpg";
 $bg__privacy-img: $prefix+"img/privacy.jpg";
-$bg__init:
-    "classes",
-    "comingsoon",
-    "contact",
-    "error",
-    "index",
-    "login",
-    "membership",
-    "privacy";
-$classes_init:
-    $bg__classes-img,
-    $bg__comingsoon-img,
-    $bg__contact-img,
-    $bg__error-img,
-    $bg__index-img,
-    $bg__login-img,
-    $bg__membership-img,
-    $bg__privacy-img;
+$bg__init: "classes",
+"comingsoon",
+"contact",
+"error",
+"index",
+"login",
+"membership",
+"privacy";
+$classes_init: $bg__classes-img,
+$bg__comingsoon-img,
+$bg__contact-img,
+$bg__error-img,
+$bg__index-img, // $bg__login-img,
+$bg__membership-img,
+$bg__privacy-img;
 $footer-height: 57px;
 $text__shadow: 1px 1px 3px #333;
+$background-items : #212529;

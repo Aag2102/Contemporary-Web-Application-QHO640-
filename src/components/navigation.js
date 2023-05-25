@@ -16,7 +16,7 @@ class Navigation extends Component{
             <Navbar bg="transparent" variant="light" expand="md" className="position-absolute px-2 w-100 z-index-100" collapseOnSelect>
                 <Navbar.Brand>
                     <Link to="/" className="font-weight-bold font-logo decoration-none text-green">
-                        <img src="img/navbar_logo.png" alt="logo" className="me-2"/>                        
+                        <img src="img/navbar_logo.jpg" alt="logo" className="me-2 classes-s8"/>                        
                     </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle className="bg-secondary"/>

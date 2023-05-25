@@ -15,6 +15,25 @@
         background-color: #666!important;
         background-blend-mode: multiply!important;
     }
+    &-s4{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+    }
+    &-s5{
+        display: flex;
+        align-items: center;
+        flex: 1;
+        padding: 5px;
+        max-width: 75%;
+    }
+    &-s6{
+        background-color: #212529;
+    }
+    &-s8{
+    width: 200px;
+    }
 }
 
 .index{
@@ -101,5 +120,8 @@ textarea{
             background-color: #666!important;
             background-blend-mode: multiply!important;
         }
+    }
+    .background-item {
+        background-color: #212529;
     }
 }
